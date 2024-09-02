@@ -1,0 +1,6 @@
+- name: varaible from prompt
+  hosts: web
+  tasks:
+  - name: from prompt
+    ansible.builtin.debug:
+      msg: "This is {{NAME}}"
