@@ -1,5 +1,5 @@
 name: ping the server
-hosts: list
+hosts: web
 tasks: # list of tasks
 - name: ping the server
   ansible.bultinn.ping:
