@@ -1,16 +1,8 @@
-- name: variable to print
+- name: varaibles from files
   hosts: web
-  vars: # Varialbe declaration in Play level
-    NAME: Ravi
+  vars_files:
+  - vars.yml
   tasks:
-  - name: print the varaiable
+  - name: print the name
     ansible.builtin.debug:
       msg: "This is {{NAME}}"
-  - name: print the varaiable1
-    vars:
-      NAME: Amireddy
-    ansible.builtin.debug:
-      msg: "This is {{NAME}}"
-  - name: print the varaiable 2
-    ansible.builtin.debug:
-      msg: "This is {{NAME}} from"
