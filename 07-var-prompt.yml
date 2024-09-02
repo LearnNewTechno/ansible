@@ -1,0 +1,10 @@
+- name: varaible from prompt
+  hosts: web
+  vars_prompt:
+  - name: NAME
+    prompt: "Please enter the name"
+    private: no
+  tasks:
+  - name: from prompt
+    ansible.builtin.debug:
+      msg: "This is {{NAME}}"
