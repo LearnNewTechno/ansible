@@ -1,0 +1,8 @@
+- name: varaibles from files
+  hosts: web
+  var_files:
+  - vars.yml
+  tasks:
+  - name: print the name
+    ansible.builtin.debug:
+      msg: "This is {{NAME}}"
