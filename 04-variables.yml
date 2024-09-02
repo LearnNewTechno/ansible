@@ -1,0 +1,8 @@
+- name: variable to print
+  hosts: web
+  vars: # Varialbe declaration in Play level
+    NAME: Ravi
+  tasks:
+  - name: print the varaiable
+    ansible.builtin.debug:
+      msg: "This is {{NAME}}"
