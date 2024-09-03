@@ -1,5 +1,6 @@
 - name: data types
   hosts: local
+  connection: local # local system
   vars:
     course: "JAVA" #String
     duration: 12 #number
