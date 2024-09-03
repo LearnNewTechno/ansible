@@ -1,0 +1,21 @@
+- name: data types
+  hosts: local
+  vars:
+    course: "JAVA" #String
+    duration: 12 #number
+    topics: #list
+    - Linux
+    - Java
+    - Anisible
+    - Terraform
+    - AWS
+    - K8
+    live: true # boolean
+    tools: # Map
+      ci: jenkins
+      cm: ansible
+      cloud: aws
+  tasks:
+  - name: course details
+    ansible.builin.debug:
+      msg: "Hi, I am learning {{course}} , with duration  {{duration}} , topics are {{ topics }} and live {{ live }}, tools are {{ tools }}"
