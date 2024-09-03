@@ -17,5 +17,5 @@
       cloud: aws
   tasks:
   - name: course details
-    ansible.builin.debug:
+    ansible.builtin.debug:
       msg: "Hi, I am learning {{course}} , with duration  {{duration}} , topics are {{ topics }} and live {{ live }}, tools are {{ tools }}"
