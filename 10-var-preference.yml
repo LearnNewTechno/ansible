@@ -1,13 +1,13 @@
 - name: varaible preference 
   hosts: web
-  vars:
-    NAME: "FROM VARS"
-  # vars_files:
-  # - vars.yml
   vars_prompt:
   - name: NAME
     prompt: "Please enter the name"
     private: false
+  vars:
+    NAME: "FROM VARS"
+  # vars_files:
+  # - vars.yml
   tasks: # list of tasks
   - name: Play 01 task1
     # vars:
