@@ -10,8 +10,8 @@
     private: false
   tasks: # list of tasks
   - name: Play 01 task1
-    vars:
-      NAME: "Ravikumar Aireddy"
+    # vars:
+    #   NAME: "Ravikumar Aireddy"
     ansible.builtin.debug:
      msg: "This is {{NAME}}"
 
