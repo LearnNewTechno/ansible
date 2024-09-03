@@ -1,6 +1,6 @@
-- name: varaible from inventory
+- name: varaible from args
   hosts: web
   tasks:
-  - name: from prompt
+  - name: from args
     ansible.builtin.debug:
       msg: "This is {{NAME}}"
