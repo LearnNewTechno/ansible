@@ -5,7 +5,7 @@
   vars_prompt:
   - name: NAME
     prompt: "Please enter the name"
-    private: no
+    private: false
   vars_files:
   - vars.yml
   tasks: # list of tasks
