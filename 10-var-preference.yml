@@ -21,7 +21,7 @@
   vars:
     NAME: "DevOps with AWS from PLAY level"
   vars_files:
-  - vars.yaml
+  - vars.yml
   vars_prompt:
   - name: NAME
     prompt: Please enter the name
