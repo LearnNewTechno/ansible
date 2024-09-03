@@ -1,37 +1,36 @@
-# - name: varaible preference 
-#   hosts: web
-#   vars:
-#     NAME: "FROM VARS"
-#   vars_files:
-#   - vars.yml
-#   vars_prompt:
-#   - name: NAME
-#     prompt: "Please enter the name"
-#     private: false
-  
-#   tasks: # list of tasks
-#   - name: Play 01 task1
-#     vars:
-#       NAME: "Ravikumar Aireddy"
-#     ansible.builtin.debug:
-#       msg: "task1 from  Play 01"
-
-- name: variables preference
+- name: varaible preference 
   hosts: web
   vars:
-    NAME: "DevOps with AWS from PLAY level"
+    NAME: "FROM VARS"
   vars_files:
   - vars.yml
   vars_prompt:
   - name: NAME
-    prompt: Please enter the name
-    private: false # not confidential
-  tasks:
-  - name: print the information
+    prompt: "Please enter the name"
+    private: false
+  tasks: # list of tasks
+  - name: Play 01 task1
     vars:
-      NAME: "DevOps with AWS from TASK level"
+      NAME: "Ravikumar Aireddy"
     ansible.builtin.debug:
-      msg: "Hi, This is {{NAME}}"
+     msg: "This is {{NAME}}"
+
+# - name: variables preference
+#   hosts: web
+#   vars:
+#     NAME: "DevOps with AWS from PLAY level"
+#   vars_files:
+#   - vars.yml
+#   vars_prompt:
+#   - name: NAME
+#     prompt: Please enter the name
+#     private: false # not confidential
+#   tasks:
+#   - name: print the information
+#     vars:
+#       NAME: "DevOps with AWS from TASK level"
+#     ansible.builtin.debug:
+#       msg: "Hi, This is {{NAME}}"
 
 #1. command line/args
 #2. Task level
