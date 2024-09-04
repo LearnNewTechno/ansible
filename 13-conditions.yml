@@ -1,10 +1,12 @@
 - name: create user
-  hosts: web'
+  hosts: web
   become: yes
   tasks:
   - name: create user exists or not
     ansible.builtin.command: id expense
       resiger: USER 
+    ignore_errors: true
+
   - name: print the USER Info
     ansible.builtinf.debug:
       msg: "User info : {{ USER }}"
