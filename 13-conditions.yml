@@ -4,9 +4,13 @@
   tasks:
   - name: create user exists or not
     ansible.builtin.command: id expense
-      resiger: USER 
+    resiger: USER 
     ignore_errors: true
 
   - name: print the USER Info
     ansible.builtinf.debug:
       msg: "User info : {{ USER }}"
+
+  - name: create user
+    ansible.builtin.command: useradd expense
+    when: USER.rc != 0
