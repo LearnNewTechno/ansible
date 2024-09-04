@@ -38,9 +38,7 @@
       - courses:
         - name: "DevOps"
           trainer: "Siva"
-          duration: 120
         - name: "Java"
           trainer: "Ravi"
-          duration: 20
     ansible.builtin.debug:
-      msg: "{{ courses | items2dict }}"
+      msg: "{{ courses | items2dictk(ey_name='name', value_name='trainer') }}"
