@@ -1,0 +1,15 @@
+- name: loops
+  hosts: web
+  become: yes
+  connection: local
+  tasks:
+  - name: install packages
+    ansible.builtin.package:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'mqsql', state: 'present'}
+    - { name: 'nginx', state: 'present'}
+    - { name: 'postfix', state: 'absent'}
+    - { name: 'httpd', state: 'absent'}
+ 
