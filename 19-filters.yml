@@ -41,4 +41,4 @@
         - name: "Java"
           trainer: "Ravi"
     ansible.builtin.debug:
-      msg: "{{ courses | items2dictk(ey_name='name', value_name='trainer') }}"
+      msg: "{{ courses | items2dict(key_name='name', value_name='trainer') }}"
