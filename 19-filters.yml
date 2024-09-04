@@ -19,4 +19,4 @@
     vars:
       numbers: [1,5,63,23,6,1,2,5]
     ansible.builtin.debug:
-      msg: "{{ numbers | uniq }}"
+      msg: "{{ numbers | unique }}"
