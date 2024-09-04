@@ -33,3 +33,15 @@
         duration: 120
     ansible.builtin.debug:
       msg: "{{ course | dict2items }}"
+  - name: convert list to map
+    vars:
+      - course:
+          name: "DevOps"
+          trainer: "Siva"
+          duration: 120
+      - course:
+          name: "Java"
+          trainer: "Ravi"
+          duration: 20
+    ansible.builtin.debug:
+      msg: "{{ course | items2dict }}"
