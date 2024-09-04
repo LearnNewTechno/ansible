@@ -15,7 +15,7 @@
       greeting: "Hello saanvi"
     ansible.builtin.debug:
       msg: "{{ greeting | lower}}"
-  - name: convert to lowercase
+  - name: convert to unique
     vars:
       numbers: [1,5,63,23,6,1,2,5]
     ansible.builtin.debug:
@@ -24,7 +24,7 @@
     vars:
       numbers: [1,5,63,23,6,1,2,5]
     ansible.builtin.debug:
-      msg: "Min : {{ numbers | min }}, Max: {{ numebrs | max }}"
+      msg: "Min : {{ numbers | min }}, Max: {{ numbers | max }}"
   - name: convert map to list
     vars:
       course:
