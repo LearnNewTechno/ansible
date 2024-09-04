@@ -43,4 +43,4 @@
           trainer: "Ravi"
           duration: 20
     ansible.builtin.debug:
-      msg: "{{ course | items2dict }}"
+      msg: "{{ courses | items2dict }}"
