@@ -25,3 +25,11 @@
       numbers: [1,5,63,23,6,1,2,5]
     ansible.builtin.debug:
       msg: "Min : {{ numbers | min }}, Max: {{ numebrs | max }}"
+  - name: convert map to list
+    vars:
+      course:
+        name: "DevOps"
+        trainer: "Siva"
+        duration: 120
+    ansible.builtin.debug:
+      msg: "{{ course | dict2items }}"
