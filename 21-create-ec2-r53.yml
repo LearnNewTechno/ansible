@@ -2,13 +2,14 @@
   hosts: local
   connection: local
   vars:
-    subnet_id: 
-    sg_id:
-    ami_id:
+    subnet_id: subnet-0ba48786a6c9cfd26
+    sg_id: "sg-0ec1957afef85bbce"
+    ami_id: "ami-09c813fb71547fc4f"
     instances:
     - mysql
     - backend
     - fronend
+    zone: ravijavadevops.site
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_imstance:
@@ -18,4 +19,20 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
-    register: ec2_instance
+    register: ec2_instances
+
+  - name: print the ec2 instance
+    ansible.builtin.debug:
+      msg: {{ ec2_instances }}
+    
+  # - name: create r53 private records
+  #   amazon.aws.route53:
+  #     state: present
+  #     zone: "{{ zone }}"
+  #     record: "{{ item.item }}.{{ zone }}" #mysql.daws81s.online
+  #     type: A
+  #     ttl: 1
+  #     value: "{{ item.instances[0].private_ip_address }}"
+  #     wait: true
+  #     overwrite: true
+  #   loop: "{{ ec2_instances.results }}"
